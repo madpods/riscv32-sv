@@ -25,19 +25,23 @@ incrementally rather than delivered as a finished core.
 
 ## Simulation
 
-Modules are simulated with [Verilator](https://www.veripool.org/verilator/).
-Example (once a module's testbench is in place):
+Each module has its own Verilator C++ testbench (`tb_<module>.cpp`), built and
+run independently:
 
 ```sh
-verilator --cc <module>.sv --exe sim_main.cpp --build
-./obj_dir/V<module>
+verilator --cc pc.sv --exe --build tb_pc.cpp -o Vpc_sim -Mdir obj_dir_pc
+./obj_dir_pc/Vpc_sim
+
+verilator --cc regfile.sv --exe --build tb_regfile.cpp -o Vregfile_sim -Mdir obj_dir_regfile
+./obj_dir_regfile/Vregfile_sim
 ```
 
 ## Layout
 
 ```
-alu.sv        - Arithmetic/Logic Unit (stub)
-pc.sv         - Program counter register
-regfile.sv    - 32x32-bit general purpose register file
-sim_main.cpp  - Verilator C++ testbench driver
+alu.sv          - Arithmetic/Logic Unit (stub)
+pc.sv           - Program counter register
+regfile.sv      - 32x32-bit general purpose register file
+tb_pc.cpp       - Verilator testbench for pc.sv
+tb_regfile.cpp  - Verilator testbench for regfile.sv
 ```
