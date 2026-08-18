@@ -1,0 +1,12 @@
+# Verilator build output
+obj_dir/
+
+# Waveforms / logs
+*.vcd
+*.fst
+*.log
+
+# Editor/OS junk
+.vscode/
+*.swp
+.DS_Store
