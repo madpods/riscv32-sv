@@ -45,3 +45,9 @@ regfile.sv      - 32x32-bit general purpose register file
 tb_pc.cpp       - Verilator testbench for pc.sv
 tb_regfile.cpp  - Verilator testbench for regfile.sv
 ```
+
+## Development Notes
+
+Claude was used for writing code comments and Verilator testbench scaffolding.
+All RTL module design and logic (PC, register file, ALU, and future
+pipeline/hazard logic) is my own.
