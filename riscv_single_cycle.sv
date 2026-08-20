@@ -2,7 +2,7 @@ module riscv_single_cycle (
     input logic clk,
     input logic rst_n
 );
-    logic [31:0] pc_current, pc_next, pc_plus4, branch_target, jump_target;
+    logic [31:0] pc_current /* verilator public */, pc_next, pc_plus4, branch_target, jump_target;
     logic [31:0] instr, rs1_data, rs2_data, alu_b, alu_result, imm, mem_rdata, wb_data;
     logic [4:0]  rs1_addr, rs2_addr, rd_addr;
     logic [6:0]  opcode, funct7;

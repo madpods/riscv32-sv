@@ -9,7 +9,7 @@ module regfile (
     output logic [31:0] rs1_data,
     output logic [31:0] rs2_data
 );
-    logic [31:0] regs [31:0];
+    logic [31:0] regs [31:0] /* verilator public */;
 
     // Reads: combinational, instant, x0 hardwired to zero
     assign rs1_data = (rs1_addr == 5'd0) ? 32'h0 : regs[rs1_addr];
